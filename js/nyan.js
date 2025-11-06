@@ -26,4 +26,13 @@ function replicateSparks (_sparksRow) {
 		currentFrame = (currentFrame % 6) + 1
 		cycleFrames(nyanCat, currentFrame)
 	}, 70)
+
+	// Timer functionality
+	const startTime = Date.now()
+	const timerValue = document.getElementById('timer-value')
+
+	setInterval(function () {
+		const elapsed = (Date.now() - startTime) / 1000
+		timerValue.textContent = elapsed.toFixed(1)
+	}, 100)
 })()
